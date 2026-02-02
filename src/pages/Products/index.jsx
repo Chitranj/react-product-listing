@@ -12,8 +12,9 @@ const Products = () => {
             const url = `${API_BASE_URL}products`;
             const response = await axios.get(url);
             setProducts(response.data.products);
+            
         }catch(error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
@@ -23,10 +24,10 @@ const Products = () => {
 
     return (
         <>
-            <div className='grid 2xl:grid-cols-7 xl:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 w-[96%] mx-auto my-5 gap-3'>
+            <div className='grid 2xl:grid-cols-7 xl:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-1 w-[96%] mx-auto my-5 gap-3'>
                 {
                     products.length && products.map((product) => {
-                        return <Product product={product}/>
+                        return <Product product={product} key={product.id}/>
                     })
                 }
                 
