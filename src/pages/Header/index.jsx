@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className='bg-white py-4 px-12'>
             <Link to="/">
-                <h2 className='font-medium text-xl text-gray-800'>E-Commerce</h2>
+                <h2 className='font-medium text-xl text-gray-800'>Testing</h2>
             </Link>
         </div>
     )

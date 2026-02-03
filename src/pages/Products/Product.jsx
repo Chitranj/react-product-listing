@@ -13,7 +13,7 @@ const Product = ({product}) => {
     return (
         <div className='border border-gray-300 rounded-xl hover:border-gray-400 cursor-pointer bg-white' onClick={handleGOToProductDetailsOnCLick}>
             <figure>
-                <img src={product.thumbnail} alt={product.title} className='mx-auto w-[75%]'/>
+                <img src={product.thumbnail} alt={product.title} className='mx-auto w-[75%]' loading='lazy'/>
             </figure>
             <hr className='border-gray-400 border-dashed'/>
             <div className='  rounded-b-xl p-2'>
