@@ -43,7 +43,6 @@ const Products = () => {
                         products.length > 0 && products.map((product) => <Product product={product} key={product.id}/>)
                     )
                 }
-                
             </div>
         </>
     )

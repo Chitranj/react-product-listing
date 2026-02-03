@@ -51,7 +51,7 @@ const Details = () => {
                     </div>
                 </div>
                 <div className='w-1/2'>
-                    <div className='ms-2 flex flex-col'>  
+                    <div className='ms-4 flex flex-col'>
                         <h2 className='text-xl font-medium text-gray-700'>{productDetails.title}</h2>
                         <div className='flex mt-1'>
                             <div className='text-xs font-medium bg-green-700 px-2 py-0.5 rounded text-white content-center cursor-pointer'>
@@ -68,7 +68,21 @@ const Details = () => {
                             <span className='font-medium text-gray-600 ms-2 line-through text-sm'>
                                 <FontAwesomeIcon icon={faIndianRupee} className=''/>{Math.ceil(productDetails.price)}
                             </span>
-                            <span>{Math.floor(productDetails.discountPercentage)} % Off</span>
+                            <span className='ms-2 text-sm text-green-600 font-medium'>{Math.floor(productDetails.discountPercentage)}% Off</span>
+                        </div>
+                        <div className='bg-gray-300 text-xs p-1 rounded mt-1 text-gray-800'>
+                            <p>{productDetails.description}</p>
+                        </div>
+                        <div className='mt-2'>
+                            <span className='text-sm font-medium'>Dimensions</span>  
+                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Width : 50</span> 
+                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Height :50</span> 
+                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Depth :50</span> 
+                        </div>
+                        <div className='mt-2'> 
+                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>No warranty</span> 
+                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Ships in 1 month</span> 
+                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>7 days return policy</span> 
                         </div>
                     </div>
                 </div>
