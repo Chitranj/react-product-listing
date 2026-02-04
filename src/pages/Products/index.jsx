@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Product from './Product'
-import { API_BASE_URL } from '../../config/api';
+import { API_BASE_URL } from '@/config/api';
 import axios from 'axios';
-import ProductLoader from '../../skeleton/Products';
+import ProductLoader from '@/skeleton/Products';
 
 const Products = () => {
 
@@ -18,9 +18,7 @@ const Products = () => {
                 axios.get(url),
                 new Promise(res => setTimeout(res, 500))
             ]);
-
             setProducts(response.data.products);
-            
         }catch(error) {
             console.log(error);
         }finally{

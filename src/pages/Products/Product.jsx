@@ -35,14 +35,12 @@ const Product = ({product}) => {
                         />
                     </figure>
                 </div>
-                
                 <hr className='border-gray-300 border-dashed'/>
                 <div className='rounded-b-xl p-2'>
                     <div>
                         <Tippy content={product.title}>
                             <h3 className='text-sm font-medium'>{productTitle}</h3>
                         </Tippy>
-                        
                     </div>
                     <div className='flex flex-row content-center'>
                         <div className='text-xs font-medium'>₹ 450</div>

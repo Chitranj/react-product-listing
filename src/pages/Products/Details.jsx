@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { API_BASE_URL } from '../../config/api';
+import { API_BASE_URL } from '@/config/api';
 import { useParams, useSearchParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faIndianRupee } from '@fortawesome/free-solid-svg-icons';
+import { getDiscountedPrice } from '@/utils/getDiscountedPrice';
+import ProductSize from './productSize';
+import ProductInfoBadges from './ProductInfoBadges';
 
 const Details = () => {
 
@@ -73,17 +76,16 @@ const Details = () => {
                         <div className='bg-gray-300 text-xs p-1 rounded mt-1 text-gray-800'>
                             <p>{productDetails.description}</p>
                         </div>
-                        <div className='mt-2'>
-                            <span className='text-sm font-medium'>Dimensions</span>  
-                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Width : 50</span> 
-                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Height :50</span> 
-                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Depth :50</span> 
-                        </div>
-                        <div className='mt-2'> 
-                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>No warranty</span> 
-                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>Ships in 1 month</span> 
-                            <span className='bg-gray-300 text-[11px] px-1 pb-0.5 rounded-md font-medium ms-1'>7 days return policy</span> 
-                        </div>
+                        
+                        <ProductSize {...productDetails.dimensions}/>
+
+                        <ProductInfoBadges
+                            items = {[
+                                productDetails.warrantyInformation,
+                                productDetails.shippingInformation, 
+                                productDetails.returnPolicy
+                            ]
+                        }/>
                     </div>
                 </div>
             </div>
